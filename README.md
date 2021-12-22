@@ -1,3 +1,3 @@
 # Curso
 
-Curso Udemy
+Este repositorio es para el curso de programación Web.
