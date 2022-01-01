@@ -1,0 +1,281 @@
+:root {
+    --primary: #9c27b0;
+    --primary-dark: #89119d;
+    --secondary: #ffce00;
+    --secondary-dark: rgb(233, 287, 2);
+    --white: #ffffff;
+    --black: #000000;
+    --font-principally: "Staatliches", cursive;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+
+/* Globales */
+
+body {
+    background-color: var(--primary);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+p {
+    font-size: 1.6rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--white);
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+}
+
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+    color: var(--secondary);
+    font-family: var(--font-principally);
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+h3 {
+    font-size: 2.4rem;
+}
+
+
+/* Header */
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.header__logo {
+    margin: 3rem 0;
+}
+
+
+/* Footer */
+
+.footer {
+    background-color: var(--primary-dark);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.footer__text {
+    font-family: var(--font-principally);
+    text-align: center;
+    font-size: 2.2rem;
+}
+
+
+/* Navegacion */
+
+.navegation {
+    background-color: var(--primary-dark);
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    /* Forma nueva*/
+}
+
+.navegation__link {
+    font-family: var(--font-principally);
+    color: var(--white);
+    font-size: 3rem;
+}
+
+.navegation__link--activo,
+.navegation__link:hover {
+    color: var(--secondary);
+}
+
+
+/* Grid */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* Productos */
+
+.product {
+    background-color: var(--primary-dark);
+    padding: 1rem;
+}
+
+.product__name {
+    font-size: 4rem;
+}
+
+.product__price {
+    font-size: 2.8rem;
+    color: var(--secondary);
+}
+
+.product__name,
+.product__price {
+    font-family: var(--font-principally);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.2;
+}
+
+
+/* Graphic */
+
+.graphic {
+    min-height: 30rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column: 1 / 3;
+}
+
+.graphic__shirt {
+    grid-row: 2 / 3;
+    background-image: url(../img/grafico1.jpg);
+}
+
+.graphic__node {
+    background-image: url(../img/grafico2.jpg);
+    grid-row: 6 / 9;
+}
+
+@media (min-width: 768px) {
+    .graphic__node {
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }
+}
+
+
+/* Nosotros */
+
+.about {
+    display: grid;
+    grid-template-rows: repeat(1, auto);
+}
+
+@media (min-width: 768px) {
+    .about {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+.about__image {
+    grid-row: 1 / 2;
+}
+
+@media (min-width: 768px) {
+    .about__image {
+        grid-column: 2 / 3;
+    }
+}
+
+
+/* Bloques */
+
+.blocks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .blocks {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.block {
+    text-align: center;
+}
+
+.block__title {
+    margin: 0;
+}
+
+
+/* Página del producto */
+
+.shirt {
+    padding: 2rem;
+}
+
+@media (min-width: 768px) {
+    .shirt {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+.form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.form__country {
+    border: 1rem solid var(--primary-dark);
+    background-color: var(--primary);
+    color: var(--white);
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+    appearance: none;
+    min-width: 50%;
+}
+
+.form__submit {
+    background-color: var(--secondary);
+    border: none;
+    font-size: 2rem;
+    font-family: var(--font-principally);
+    padding: 2rem;
+    transition: background-color 0.3s ease;
+    grid-column: 1 / 3;
+}
+
+.form__submit:hover {
+    cursor: pointer;
+    background-color: var(--secondary-dark);
+}
