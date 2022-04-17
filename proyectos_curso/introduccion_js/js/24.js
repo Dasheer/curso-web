@@ -51,10 +51,22 @@ const carrito = [
 ];
 
 for (let i = 0; i < carrito.length; i++) {
-    console.log(carrito[i]);
+    console.log(carrito[i].nombre);
 }
 
 // While Loop
-
+// let i = 1;
+//
+// while (i < 10) {
+//     console.log('Desde el while lopp');
+//     i++;
+// }
 
 // Do While Loop
+
+let i = 0;
+
+do {
+    console.log(i);
+    i++;
+}while (i < 10);
