@@ -10,4 +10,4 @@ const reservacion = {
     }
 }
 
-reservacion.informacion();
+//reservacion.informacion();
