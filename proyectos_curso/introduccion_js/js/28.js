@@ -15,5 +15,17 @@ class Producto {
 const producto2 = new Producto('Monitor Curvo de 49"', 800, false);
 const producto3 = new Producto('Laptop', 300, true);
 
+class Libro extends Producto{
+    constructor(nombre, precio, isbn) {
+        super(nombre,precio);
+        this.isbn = isbn;
+    }
+
+    formatearProducto() {
+        return `${super.formatearProducto()} y su ISBN es: ${this.isbn}`;
+    }
+}
+
+const libro = new Libro('JavaScript', 120, '9876543456789')
+console.log(libro.formatearProducto());
 console.log(producto2.formatearProducto());
-console.log(producto3.formatearProducto());
