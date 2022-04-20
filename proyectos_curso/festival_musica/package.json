@@ -4,12 +4,15 @@
   "description": "Proyecto con Gulp, SASS y HTML.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "sass --watch src/scss:build/css"
   },
   "keywords": [
     "SASS",
     "Gulp"
   ],
   "author": "Daniel PC",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.50.1"
+  }
 }
