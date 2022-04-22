@@ -9,8 +9,7 @@ function css(callback) {
 }
 
 function dev(callback) {
-
-    watch('src/scss/app.scss', css);
+    watch('src/scss/**/*.scss', css);
     callback();
 }
 
