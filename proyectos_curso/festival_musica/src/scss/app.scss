@@ -1,6 +1,2 @@
-@import 'base/variables';
+@use 'base';
 @import 'content/contenido';
-
-body {
-  background-color: $red;
-}
