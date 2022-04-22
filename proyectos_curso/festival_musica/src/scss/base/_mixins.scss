@@ -1,3 +1,22 @@
-@mixin heading {
+@use 'variables' as val;
 
+@mixin telefono {
+  @media (min-width: val.$telefono) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: val.$tablet) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: val.$desktop) {
+    @content;
+  }
+}
+@mixin desktopXL {
+  @media (min-width: val.$desktopXL) {
+    @content;
+  }
 }
