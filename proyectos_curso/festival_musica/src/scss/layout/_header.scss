@@ -6,6 +6,8 @@
 
   @include mixs.tablet {
     &.fijo {
+      left: 0;
+      top: 0;
       position: fixed;
       width: 100%;
       box-shadow: .1rem .2rem .1rem #333;
