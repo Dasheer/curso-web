@@ -13,13 +13,17 @@
   "author": "Daniel PC",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^10.4.5",
+    "cssnano": "^5.1.7",
     "gulp": "^4.0.2",
     "gulp-avif": "^1.1.0",
     "gulp-cache": "^1.1.3",
     "gulp-imagemin": "^7.1.0",
     "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.1.0",
     "gulp-webp": "^4.0.1",
+    "postcss": "^8.4.12",
     "sass": "^1.50.1"
   }
 }
