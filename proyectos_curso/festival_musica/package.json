@@ -26,5 +26,8 @@
     "gulp-webp": "^4.0.1",
     "postcss": "^8.4.12",
     "sass": "^1.50.1"
+  },
+  "dependencies": {
+    "gulp-terser-js": "^5.2.2"
   }
 }
