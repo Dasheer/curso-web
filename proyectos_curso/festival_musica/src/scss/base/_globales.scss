@@ -12,6 +12,10 @@ html {
 body {
   font-family: val.$fuente_principal;
   font-size: 1.6rem;
+
+  &.fijar-body {
+    overflow: hidden;
+  }
 }
 p {
   font-size: 2rem;

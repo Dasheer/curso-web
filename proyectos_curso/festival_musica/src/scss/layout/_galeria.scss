@@ -41,3 +41,18 @@
     max-width: 80rem;
   }
 }
+
+.btn-cerrar {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: val.$blanco;
+  color: val.$negro;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
