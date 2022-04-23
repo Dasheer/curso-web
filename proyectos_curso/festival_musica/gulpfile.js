@@ -48,13 +48,21 @@ function images(done) {
     done();
 }
 
+function javascript(done) {
+    src('src/js/**/*.js')
+        .pipe(dest('build/js'));
+    done();
+}
+
 function dev(done) {
     watch('src/scss/**/*.scss', css);
+    watch('src/scss/**/*.js', javascript);
     done();
 }
 
 exports.css = css;
+exports.js = javascript;
 exports.images = images;
 exports.vrWebp = vrWebp;
 exports.vrAvif = vrAvif;
-exports.dev = parallel(images,vrWebp,vrAvif,dev);
+exports.dev = parallel(images,vrWebp,vrAvif, javascript, dev);
