@@ -8,6 +8,7 @@ const plumber = require('gulp-plumber');
 const cache = require('gulp-cache');
 const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
+const avif = require('gulp-avif');
 
 function css(done) {
     src('src/scss/**/*.scss')     // Identificar el archivo .SCSS a compilar
@@ -18,23 +19,29 @@ function css(done) {
 }
 
 function vrWebp (done) {
-
     const opc = {
         quality: 50
     };
-
     src('src/img/**/*.{png,jpg}')
         .pipe(webp(opc))
         .pipe(dest('build/img'))
     done();
 }
 
-function images(done) {
+function vrAvif (done) {
+    const opc = {
+        quality: 50
+    };
+    src('src/img/**/*.{png,jpg}')
+        .pipe(avif(opc))
+        .pipe(dest('build/img'))
+    done();
+}
 
+function images(done) {
     const opc = {
       optimizationLevel: 3
     };
-
     src('src/img/**/*.{png,jpg}')
         .pipe(cache(imagemin(opc)))
         .pipe(dest('build/img'))
@@ -49,4 +56,5 @@ function dev(done) {
 exports.css = css;
 exports.images = images;
 exports.vrWebp = vrWebp;
-exports.dev = parallel(images,vrWebp,dev);
+exports.vrAvif = vrAvif;
+exports.dev = parallel(images,vrWebp,vrAvif,dev);
