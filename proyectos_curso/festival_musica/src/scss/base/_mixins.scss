@@ -26,3 +26,9 @@
   grid-template-columns: repeat($columnas, 1fr);
   gap: $unidad;
 }
+
+@mixin reset_list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
