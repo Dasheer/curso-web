@@ -5,6 +5,8 @@ const sass = require('gulp-sass')(require('sass'));
 const plumber = require('gulp-plumber');
 
 // Imágenes
+const cache = require('gulp-cache');
+const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
 
 function css(done) {
@@ -27,11 +29,24 @@ function vrWebp (done) {
     done();
 }
 
+function images(done) {
+
+    const opc = {
+      optimizationLevel: 3
+    };
+
+    src('src/img/**/*.{png,jpg}')
+        .pipe(cache(imagemin(opc)))
+        .pipe(dest('build/img'))
+    done();
+}
+
 function dev(done) {
     watch('src/scss/**/*.scss', css);
     done();
 }
 
 exports.css = css;
+exports.images = images;
 exports.vrWebp = vrWebp;
-exports.dev = parallel(vrWebp,dev);
+exports.dev = parallel(images,vrWebp,dev);
