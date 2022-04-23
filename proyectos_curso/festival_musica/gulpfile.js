@@ -18,6 +18,16 @@ function css(done) {
     done();
 }
 
+function images(done) {
+    const opc = {
+        optimizationLevel: 3
+    }
+    src('src/img/**/*.{png,jpg}')
+        .pipe(cache(imagemin(opc)))
+        .pipe(dest('build/img'))
+    done();
+}
+
 function vrWebp (done) {
     const opc = {
         quality: 50
@@ -38,16 +48,6 @@ function vrAvif (done) {
     done();
 }
 
-function images(done) {
-    const opc = {
-      optimizationLevel: 3
-    };
-    src('src/img/**/*.{png,jpg}')
-        .pipe(cache(imagemin(opc)))
-        .pipe(dest('build/img'))
-    done();
-}
-
 function javascript(done) {
     src('src/js/**/*.js')
         .pipe(dest('build/js'));
@@ -56,7 +56,7 @@ function javascript(done) {
 
 function dev(done) {
     watch('src/scss/**/*.scss', css);
-    watch('src/scss/**/*.js', javascript);
+    watch('src/js/**/*.js', javascript);
     done();
 }
 
@@ -65,4 +65,4 @@ exports.js = javascript;
 exports.images = images;
 exports.vrWebp = vrWebp;
 exports.vrAvif = vrAvif;
-exports.dev = parallel(images,vrWebp,vrAvif, javascript, dev);
+exports.dev = parallel(images,vrWebp,vrAvif,javascript,dev);
