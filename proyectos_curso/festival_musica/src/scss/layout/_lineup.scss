@@ -1,0 +1,57 @@
+@use '../base/variables' as val;
+@use '../base/mixins' as mixs;
+
+.lineup {
+  background-color: val.$rosa;
+  padding: 5rem 0;
+
+  h3, p {
+    text-align: center;
+    color: val.$blanco;
+  }
+  .dia {
+    text-transform: uppercase;
+    margin-bottom: 5rem;
+  }
+}
+
+.escenario-contenedor {
+  @include mixs.tablet {
+    @include mixs.grid(2, 5rem);
+  }
+
+  p {
+    color: val.$negro;
+  }
+}
+
+.escenario {
+  padding-top: 2rem;
+  .nombre-escenario {
+    &:after {
+      content: '';
+      display: block;
+      width: 20rem;
+      height: 10rem;
+      background-size: 15rem;
+      background-repeat: no-repeat;
+      background-position: center center;
+      margin: 2rem auto 0 auto;
+    }
+  }
+}
+
+.edm .nombre-escenario:after{
+  background-image: url('../img/icono_edm.png');
+}
+
+.rock .nombre-escenario:after{
+  background-image: url('../img/icono_rock.png');
+}
+
+.bg-amarillo {
+  background-color: val.$amarillo;
+}
+.bg-verde {
+  background-color: val.$verde;
+}
