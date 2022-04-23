@@ -3,6 +3,14 @@
 
 .header {
   background-color: val.$verde;
+
+  @include mixs.tablet {
+    &.fijo {
+      position: fixed;
+      width: 100%;
+      box-shadow: .1rem .2rem .1rem #333;
+    }
+  }
   h1 {
     color: val.$blanco;
     text-align: center;
